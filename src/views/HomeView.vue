@@ -8,26 +8,40 @@
         </h1>
         <visual-elements-component :isLeft="true" />
       </div>
-      <navigation-component/>
+      <navigation-component
+        :fnActionClick="openNavigationMenu"/>
+      <navigation-list v-if="isNavigationMenuOpen"/>
     </header>
     <main-component/>
-    <footer class="footer_wrapper">
-      Footer
-    </footer>
+    <footer-component/>
   </div>
 </template>
 
 <script>
 import VisualElementsComponent from '@/components/Other/VisualElementsComponent/VisualElementsComponent.vue';
 import NavigationComponent from '@/components/NavigationComponent/NavigationComponent.vue';
+import NavigationList from '@/components/NavigationComponent/NavigatrionList/NavigationList.vue';
 import MainComponent from '@/components/MainComponent/MainComponent.vue';
-
+import FooterComponent from '@/components/FooterComponent/FooterComponent.vue';
 export default {
   name: 'HomeView',
   components: {
     VisualElementsComponent,
     NavigationComponent,
-    MainComponent
+    NavigationList,
+    MainComponent,
+    FooterComponent
+  },
+  data() {
+    return {
+      isNavigationMenuOpen: false,
+    }
+  },
+  methods: {
+    openNavigationMenu() {
+      this.isNavigationMenuOpen = !this.isNavigationMenuOpen;
+      return this.isNavigationMenuOpen;
+    }
   }
 };
 </script>
@@ -36,6 +50,8 @@ export default {
 .main_page_wrapper {
   height: 100%;
   .header_wrapper {
+    position: relative;
+    z-index: 3;
     margin-top: 20px;
     height: 86px;
     display: flex;
