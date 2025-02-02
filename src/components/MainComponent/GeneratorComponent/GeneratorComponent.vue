@@ -80,11 +80,8 @@ export default {
           display: inline-block;
         }
       }
-      .guide_title {
+      .generator_title {
         text-align: start;
-        text-transform: uppercase;
-        font-size: 26px;
-        font-weight: 500;
       }
     }
     .generator_elements {
@@ -121,7 +118,7 @@ export default {
         background: url('@/assets/svg/generator_first.svg');
       }
       li:nth-child(2) {
-        background: url('@/assets/svg/generator_four.svg');
+        background: url('@/assets/svg/generator_third.svg');
       }
       li:nth-child(3) {
         background: url('@/assets/svg/generator_five.svg');
@@ -131,7 +128,7 @@ export default {
         background: url('@/assets/svg/generator_second.svg');
       }
       li:last-child {
-        background: url('@/assets/svg/generator_third.svg');
+        background: url('@/assets/svg/generator_four.svg');
       }
     }
   }

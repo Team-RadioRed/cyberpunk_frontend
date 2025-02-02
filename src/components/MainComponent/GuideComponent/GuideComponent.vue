@@ -94,9 +94,6 @@ export default {
       }
       .guide_title {
         text-align: start;
-        text-transform: uppercase;
-        font-size: 26px;
-        font-weight: 500;
       }
     }
     .guide_elements {

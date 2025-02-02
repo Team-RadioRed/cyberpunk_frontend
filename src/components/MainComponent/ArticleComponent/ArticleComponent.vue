@@ -104,11 +104,6 @@ export default {
         display: inline-block;
       }
     }
-    .article_title {
-      text-transform: uppercase;
-      font-size: 26px;
-      font-weight: 500;
-    }
   }
   .article_elements {
     list-style: none;
@@ -140,7 +135,7 @@ export default {
       }
       &:hover {
         transition: 0.6s;
-        background: linear-gradient(0deg, $color-dark-blue 100%, rgba(255, 0, 0, 0) 100%);
+        background: linear-gradient(0deg, $color-light-blue 100%, rgba(255, 0, 0, 0) 100%);
         .article_element_title {
           margin-left: 30px;
         }
