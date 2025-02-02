@@ -22,6 +22,10 @@ export default {
     title: {
       type: String,
       required: true
+    },
+    fnAction: {
+      type: Function,
+      required: true
     }
   },
   data() {
@@ -31,7 +35,7 @@ export default {
   },
   methods: {
     openNavigationMenu() {
-      this.isOpen = !this.isOpen;
+      this.isOpen = this.fnAction();
     }
   }
 };
@@ -49,20 +53,20 @@ export default {
     display: flex;
   }
   &:hover {
-    color: $color-dark-blue;
+    color: $color-light-blue;
     img {
       transition: 0.3s;
-      filter: $color-dark-blue-force;
+      filter: $color-light-blue-force;
     }
   }
 }
 .open {
-  color: $color-dark-blue;
+  color: $color-light-blue;
   .element_arrow {
     transform: rotate(180deg);
     img {
       transition: 0.3s;
-      filter: $color-dark-blue-force;
+      filter: $color-light-blue-force;
     }
   }
 }
