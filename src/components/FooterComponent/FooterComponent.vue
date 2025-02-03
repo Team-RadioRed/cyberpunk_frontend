@@ -1,35 +1,38 @@
 <template>
-    <footer class="footer_wrapper">
-      <div class="footer_divide_line">
-        <div class="left_line"/>
-        <div class="center_line"/>
-        <div class="right_line"/>
-      </div>
-      <h2 class="footer_title">НОВОСТИ</h2>
-      <div>
-        <ul class="footer_list">
-          <li
-            v-for="(itemData, index) in dataFooter"
-            :key="index"
-            class="footer_item">
-            <h3 class="footer_item_title">
-              {{ itemData.title }}
-            </h3>
-            <div class="footer_item_body">
-              {{ itemData.body_text }}
+  <footer class="footer_wrapper">
+    <div class="footer_background_wrapper">
+      <div class="footer_background_gradient"/>
+    </div>
+    <div class="footer_divide_line">
+      <div class="left_line"/>
+      <div class="center_line"/>
+      <div class="right_line"/>
+    </div>
+    <h2 class="footer_title">НОВОСТИ</h2>
+    <div>
+      <ul class="footer_list">
+        <li
+          v-for="(itemData, index) in dataFooter"
+          :key="index"
+          class="footer_item">
+          <h3 class="footer_item_title">
+            {{ itemData.title }}
+          </h3>
+          <div class="footer_item_body">
+            {{ itemData.body_text }}
+          </div>
+          <div class="footer_item_bottom">
+            <div class="item_bottom_date">
+              {{ itemData.date }}
             </div>
-            <div class="footer_item_bottom">
-              <div class="item_bottom_date">
-                {{ itemData.date }}
-              </div>
-              <button class="item_bottom_btn">
-                Читать далее
-              </button>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </footer>
+            <button class="item_bottom_btn">
+              Читать далее
+            </button>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </footer>
 </template>
 
 <script>
@@ -41,27 +44,31 @@ export default {
     return {
       dataFooter: [
         {
-          title: "Обновление 1.5 для Cyberpunk RED: Новые возможности и миссии!",
-          body_text: "Компания R. Talsorian Games с радостью объявляет о выходе долгожданного обновления 1.5 для настольно-ролевой игры Cyberpunk RED. Это обновление приносит множество новых возможностей, миссий и улучшений. В статье будет рассказано о новых локациях, персонажах и сюжетных линиях, которые добавят глубину и разнообразие в игровой мир.",
-          date: "24.09.2024 14:30"
-        },
-        {
-          title: 'Анонс нового дополнения для Cyberpunk RED: "Тени Найт-Сити"',
-          body_text: 'R. Talsorian Games объявила о предстоящем выпуске нового дополнения для Cyberpunk RED под названием "Тени Найт-Сити". В статье будет рассказано о новых локациях, персонажах и сюжетных линиях, которые добавят глубину и разнообразие в игровой мир. Ожидайте новых вызовов и захватывающих приключений в темных уголках Найт-Сити.',
-          date: '20.08.2024 15:27'
-        },
-        {
           title: 'Обновление 1.5 для Cyberpunk RED: Новые возможности и миссии!',
+          // eslint-disable-next-line max-len
           body_text: 'Компания R. Talsorian Games с радостью объявляет о выходе долгожданного обновления 1.5 для настольно-ролевой игры Cyberpunk RED. Это обновление приносит множество новых возможностей, миссий и улучшений. В статье будет рассказано о новых локациях, персонажах и сюжетных линиях, которые добавят глубину и разнообразие в игровой мир.',
           date: '24.09.2024 14:30'
         },
         {
           title: 'Анонс нового дополнения для Cyberpunk RED: "Тени Найт-Сити"',
+          // eslint-disable-next-line max-len
+          body_text: 'R. Talsorian Games объявила о предстоящем выпуске нового дополнения для Cyberpunk RED под названием "Тени Найт-Сити". В статье будет рассказано о новых локациях, персонажах и сюжетных линиях, которые добавят глубину и разнообразие в игровой мир. Ожидайте новых вызовов и захватывающих приключений в темных уголках Найт-Сити.',
+          date: '20.08.2024 15:27'
+        },
+        {
+          title: 'Обновление 1.5 для Cyberpunk RED: Новые возможности и миссии!',
+          // eslint-disable-next-line max-len
+          body_text: 'Компания R. Talsorian Games с радостью объявляет о выходе долгожданного обновления 1.5 для настольно-ролевой игры Cyberpunk RED. Это обновление приносит множество новых возможностей, миссий и улучшений. В статье будет рассказано о новых локациях, персонажах и сюжетных линиях, которые добавят глубину и разнообразие в игровой мир.',
+          date: '24.09.2024 14:30'
+        },
+        {
+          title: 'Анонс нового дополнения для Cyberpunk RED: "Тени Найт-Сити"',
+          // eslint-disable-next-line max-len
           body_text: 'R. Talsorian Games объявила о предстоящем выпуске нового дополнения для Cyberpunk RED под названием "Тени Найт-Сити". В статье будет рассказано о новых локациях, персонажах и сюжетных линиях, которые добавят глубину и разнообразие в игровой мир. Ожидайте новых вызовов и захватывающих приключений в темных уголках Найт-Сити.',
           date: '20.08.2024 15:27'
         }
       ]
-    }
+    };
   },
   methods: {
   }
@@ -77,6 +84,20 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  .footer_background_wrapper {
+    height: 100%;
+    max-height: 1em;
+    overflow: hidden;
+    .footer_background_gradient {
+      position: absolute;
+      z-index: -1;
+      width: 1184px;
+      height: 1084px;
+      bottom: 0px;
+      left: -492px;
+      background: radial-gradient(47.35% 40.58%, #FF2A4D30 0%, rgba(62, 132, 140, 0) 100%);
+    }
+  }
   .footer_divide_line {
     width: 100%;
     display: flex;
@@ -127,7 +148,7 @@ export default {
   .footer_title {
     text-align: start;
     margin-top: 10px;
-    margin-bottom: 24px;
+    margin-bottom: 36px;
   }
   .footer_list {
     max-width: 840px;
@@ -202,6 +223,18 @@ export default {
         content: url('@/assets/svg/footer_item_bg-even.svg');
       }
     }
+  }
+  &::before {
+    content: url('@/assets/svg/background_deskt_elem_left.svg');
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+  }
+  &::after {
+    content: url('@/assets/svg/background_deskt_elem_right.svg');
+    position: absolute;
+    right: 0px;
+    top: 124px;
   }
 }
 </style>
