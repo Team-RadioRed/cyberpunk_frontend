@@ -92,6 +92,7 @@ export default {
       gap: 19px;
       box-sizing: border-box;
       .generator_element {
+        position: relative;
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
@@ -119,6 +120,10 @@ export default {
       }
       li:nth-child(2) {
         background: url('@/assets/svg/generator_third.svg');
+        &::after {
+          content: '';
+          @include triangle-element($color-blue, 0, 0px, -24px);
+        }
       }
       li:nth-child(3) {
         background: url('@/assets/svg/generator_five.svg');
@@ -126,6 +131,10 @@ export default {
       }
       li:nth-child(4) {
         background: url('@/assets/svg/generator_second.svg');
+        &::after {
+          content: '';
+          @include triangle-element($color-blue, 0, 0px, -26px);
+        }
       }
       li:last-child {
         background: url('@/assets/svg/generator_four.svg');

@@ -1,5 +1,6 @@
 <template>
   <div class="article_container">
+    <div class="article_background_gradient"/>
     <div class="article_wrapper">
       <div class="title_icon">
         <img
@@ -22,6 +23,7 @@
         </div>
       </li>
       <li class="article_element">
+        <in-progress-component/>
         <h3 class="article_element_title">
           &#91; НЕТРАНИНГ &#93;
         </h3>
@@ -32,6 +34,7 @@
         </div>
       </li>
       <li class="article_element">
+        <in-progress-component/>
         <h3 class="article_element_title">
           &#91; БОЙ &#93;
         </h3>
@@ -76,16 +79,19 @@
 </template>
 
 <script>
+import InProgressComponent from '@/components/Other/InProgressComponent/InProgressComponent.vue';
 
 export default {
   name: 'ArticleComponent',
   components: {
+    InProgressComponent
   }
 };
 </script>
 
 <style scoped lang="scss">
 .article_container {
+  position: relative;
   width: 100%;
   max-width: 323px;
   max-width: 646px;
@@ -93,6 +99,15 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 25px;
+  .article_background_gradient {
+    position: absolute;
+    z-index: -1;
+    width: 984px;
+    height: 984px;
+    bottom: -492px;
+    right: -492px;
+    background: radial-gradient(47.35% 40.58%, #05DAE835 0%, rgba(62, 132, 140, 0) 100%);
+  }
   .article_wrapper {
     display: flex;
     gap: 10px;
@@ -111,6 +126,7 @@ export default {
     flex-direction: column;
     box-sizing: border-box;
     .article_element {
+      position: relative;
       width: 100%;
       height: 68px;
       display: flex;
@@ -121,6 +137,10 @@ export default {
       background: transparent;
       transition: background 0.5s ease;
       cursor: pointer;
+      div:first-child {
+        left: 200px;
+        top: 30%;
+      }
       .article_element_title {
         margin-left: 6px;
         color: $color-blue;
@@ -144,6 +164,20 @@ export default {
         }
       }
     }
+  }
+  &::before {
+    content: url('@/assets/svg/icon_star_article.svg');
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+  }&::after {
+    content: url('@/assets/svg/icon_barcode_article.svg');
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 32px;
   }
 }
 </style>

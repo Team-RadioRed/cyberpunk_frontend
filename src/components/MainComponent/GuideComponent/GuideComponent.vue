@@ -12,12 +12,14 @@
         </h2>
       </div>
       <ul class="guide_elements">
-        <li class="first_element guide_element">
+        <li class="guide_element">
+          <in-progress-component/>
           <h3 class="guide_element_title">
             &#91; ОРУЖИЕ &#93;
           </h3>
         </li>
         <li class="guide_element">
+          <in-progress-component/>
           <div class="guide_element_back"/>
           <h3 class="guide_element_title">
             &#91; Импланты &#93;
@@ -30,6 +32,7 @@
           </h3>
         </li>
         <li class="guide_element">
+          <in-progress-component/>
           <div class="guide_element_back"/>
           <h3 class="guide_element_title">
             &#91; Расходники &#93;
@@ -59,10 +62,12 @@
 </template>
 
 <script>
+import InProgressComponent from '@/components/Other/InProgressComponent/InProgressComponent.vue';
 
 export default {
   name: 'GuideComponent',
   components: {
+    InProgressComponent
   }
 };
 </script>
@@ -103,10 +108,8 @@ export default {
       grid-template-rows: repeat(4, 145px);
       gap: 21px;
       box-sizing: border-box;
-      .first_element {
-        grid-row: span 2;
-      }
       .guide_element {
+        position: relative;
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
@@ -131,9 +134,17 @@ export default {
       }
       li:nth-child(1) {
         background: url('@/assets/svg/back_weapon.svg');
+        grid-row: span 2;
+        &::after {
+          content: '';
+          @include triangle-element($color-red, 0, 0, -28px);
+        }
       }
       li:nth-child(2) {
         background: url('@/assets/svg/back_implants.svg');
+        div:first-child {
+          left: 20px;
+        }
       }
       li:nth-child(3) {
         background: url('@/assets/svg/back_netraning.svg');
@@ -146,6 +157,10 @@ export default {
       }
       li:nth-child(6) {
         background: url('@/assets/svg/back_transport.svg');
+        &::after {
+          content: '';
+          @include triangle-element($color-red, 90deg, -18px, -8px);
+        }
       }
       li:nth-child(7) {
         background: url('@/assets/svg/back_npc.svg');
