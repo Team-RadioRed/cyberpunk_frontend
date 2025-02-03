@@ -35,13 +35,13 @@ export default {
       navigationValue: [
         {
           name: 'Справочники',
-          fnAction: this.fnActionClick,
+          fnAction: this.fnActionClick
         }, {
           name: 'Статьи',
-          fnAction: function() {console.log(this.name)},
+          fnAction() { console.log(this.name); }
         }, {
           name: 'Генераторы',
-          fnAction: function() {console.log(this.name)},
+          fnAction() { console.log(this.name); }
         }
       ]
     };
