@@ -23,6 +23,7 @@ import NavigationComponent from '@/components/NavigationComponent/NavigationComp
 import NavigationList from '@/components/NavigationComponent/NavigatrionList/NavigationList.vue';
 import MainComponent from '@/components/MainComponent/MainComponent.vue';
 import FooterComponent from '@/components/FooterComponent/FooterComponent.vue';
+
 export default {
   name: 'HomeView',
   components: {
@@ -34,8 +35,8 @@ export default {
   },
   data() {
     return {
-      isNavigationMenuOpen: false,
-    }
+      isNavigationMenuOpen: false
+    };
   },
   methods: {
     openNavigationMenu() {
