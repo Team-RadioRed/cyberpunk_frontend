@@ -1,0 +1,12 @@
+@mixin triangle-element ($color, $deg, $y, $x) {
+  margin: 0;
+  position: absolute;
+  top: $y;
+  right: $x;
+  width: 0;
+  height: 0;
+  border-top: 17px solid $color;
+  border-left: 17px solid transparent;
+  border-right: 17px solid transparent;
+  transform: rotate($deg);
+}
