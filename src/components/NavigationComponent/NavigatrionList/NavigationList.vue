@@ -1,7 +1,7 @@
 <template>
-  <div class="navigation_background"></div>
+  <div class="navigation_background"/>
   <ul class="navigation_menu">
-    <div class="navigation_menu_border"></div>
+    <div class="navigation_menu_border"/>
     <li
       v-for="(item, index) in listValue"
       :key="index"
@@ -113,7 +113,7 @@ export default {
     bottom: -1px;
     width: 0;
     height: 0;
-    border-bottom: 8px solid $color-blue; 
+    border-bottom: 8px solid $color-blue;
     border-right: 8px solid transparent;
   }
   .menu_item:nth-child(3)::after,
@@ -126,7 +126,7 @@ export default {
     bottom: -1px;
     width: 0;
     height: 0;
-    border-bottom: 8px solid $color-blue; 
+    border-bottom: 8px solid $color-blue;
     border-left: 8px solid transparent;
   }
   .menu_item:hover {
